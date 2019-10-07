@@ -6,7 +6,7 @@ op = int(input("""
 1) Agregar Palabra 
 2) Iniciar Juego
 3) Salir
-4) apagar
+4) Hibernar
 Opcion: """))
 os.system("cls")
 obj_menu.Opciones(op)

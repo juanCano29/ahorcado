@@ -91,15 +91,15 @@ class play:
                                                     """
         ]
 
-        opc = input("Desea Iniciar s/n: ")
-        os.system("cls")
+
         lista_mostrar = []
         obj_palabras.llenado_palabras()
         obj_palabras.sobrescribir()
         Palabra_obtenida = obj_palabras.archivo_origen.pop()
         pase = True
         intentos = 5
-
+        opc = input("Desea Iniciar s/n: ")
+        os.system("cls")
         while opc.lower() == "s" and len(obj_palabras.archivo_origen) > 0:
             pl = list(Palabra_obtenida)
             palab = ''.join(pl)
@@ -108,12 +108,14 @@ class play:
 
             while pase:
 
+                print(ahorcado[intentos])
+
                 print(' '.join(lista_mostrar))
 
                 letra = input("Ingresa letra: ")
                 os.system("cls")
 
-                while (not (re.fullmatch(r"[A-Za-z ]{1}", letra))):
+                while (not (re.fullmatch(r"[A-Za-z]{1}", letra))):
                     os.system("cls")
                     print("max car. {1}, solo letras.")
                     letra = input("Ingresa letra: ")
@@ -122,7 +124,7 @@ class play:
                     intentos = intentos - 1
                     print('Has fallado!!!! Te quedan ' + str(intentos) + ' intentos')
 
-                print(ahorcado[intentos])
+
 
                 for i, valor in enumerate(pl):
                     if valor == letra:
@@ -152,6 +154,7 @@ class play:
                     time.sleep(1)
                     os.system("exit")
                     os.system("ahorcado.py")
+        opc = input("Desea Iniciar Nuevo Juego s/n: ")
 
         if opc.lower() == "n":
             os.system("ahorcado.py")
