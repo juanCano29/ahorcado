@@ -1,9 +1,7 @@
 import os
 import Menu
 from time import sleep
-
 obj_menu = Menu.men()
-
 op = int(input(""" 
 1) Agregar Palabra 
 2) Iniciar Juego
