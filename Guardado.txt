@@ -1,0 +1,8 @@
+pino
+palo
+escoba
+computadora
+mouse
+nube
+trueno
+celular
