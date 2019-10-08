@@ -1,8 +1,6 @@
-pino
 palo
-escoba
+pino
+casa
 computadora
-mouse
-nube
-trueno
-celular
+tecla
+boton

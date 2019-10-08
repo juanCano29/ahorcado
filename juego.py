@@ -1,4 +1,4 @@
-import re, os, time, sys
+import re, os, time
 import Palabras
 obj_palabras = Palabras.palabra()
 
@@ -94,8 +94,8 @@ class play:
 
         lista_mostrar = []
         obj_palabras.llenado_palabras()
-        obj_palabras.sobrescribir()
         Palabra_obtenida = obj_palabras.archivo_origen.pop()
+        obj_palabras.sobrescribir()
         pase = True
         intentos = 5
         opc = input("Desea Iniciar s/n: ")
@@ -107,8 +107,6 @@ class play:
                 lista_mostrar.append('_')
 
             while pase:
-
-                print(ahorcado[intentos])
 
                 print(' '.join(lista_mostrar))
 
@@ -124,6 +122,7 @@ class play:
                     intentos = intentos - 1
                     print('Has fallado!!!! Te quedan ' + str(intentos) + ' intentos')
 
+                print(ahorcado[intentos])
 
 
                 for i, valor in enumerate(pl):
@@ -134,33 +133,36 @@ class play:
                     pase = False
                     print('Has perdido, la palabra '
                           'era ' + palab)
-                    time.sleep(0.5)
+                    time.sleep(1)
                     print("GAME OVER")
-                    time.sleep(0.5)
+                    time.sleep(1)
                     print("Cargando...")
                     time.sleep(1)
-                    sys.exit()
+                    cont = 1
+                    os.system("ahorcado.py")
 
                 elif pl == lista_mostrar:
                     pase = False
                     print("Felicidades Has Ganado")
                     print('la palabra '
                           'era ' + palab)
-                    time.sleep(0.5)
+                    time.sleep(1)
                     print("GAME OVER")
-                    time.sleep(0.5)
+                    time.sleep(1)
                     print("Cargando...")
                     os.system("cls")
                     time.sleep(1)
-                    os.system("exit")
+                    cont = 1
                     os.system("ahorcado.py")
         opc = input("Desea Iniciar Nuevo Juego s/n: ")
 
         if opc.lower() == "n":
             os.system("ahorcado.py")
 
-    def Salir(self):
-        sys.exit()
+    # def Salir(self):
+    #     sys.exit()
+    def Resetear(self):
+        return 0
 
     def Hibernar(self):
         os.system("shutdown /h")

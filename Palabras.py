@@ -17,7 +17,7 @@ class palabra:
         shuffle(self.archivo_origen)
 
     def sobrescribir(self):
-        ar = open(self.ao, "a")
-        cadena = "\n".join(str(x) for x in self.archivo_destino)
+        ar = open(self.ao, "w")
+        cadena = "\n".join(str(x) for x in self.archivo_origen)
         ar.write(cadena)
         ar.close()
