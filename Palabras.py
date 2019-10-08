@@ -1,4 +1,5 @@
 from random import shuffle
+import os, time
 class palabra:
     archivo_origen = []
     archivo_destino = []
@@ -21,3 +22,14 @@ class palabra:
         cadena = "\n".join(str(x) for x in self.archivo_origen)
         ar.write(cadena)
         ar.close()
+
+    def Resetear(self):
+        self.archivo_origen = self.archivo_destino
+        shuffle(self.archivo_origen)
+        arc = open(self.ao, "w")
+        cad = "\n".join(str(i) for i in self.archivo_destino)
+        arc.write(cad)
+        arc.close()
+        print("Palabras Restauradas")
+        time.sleep(1)
+        os.system("ahorcado.py")

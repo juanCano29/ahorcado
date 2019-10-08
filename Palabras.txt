@@ -1,4 +1,5 @@
-tecla
-boton
 pino
-casa
+tecla
+computadora
+palo
+boton

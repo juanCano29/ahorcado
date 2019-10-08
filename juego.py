@@ -154,7 +154,7 @@ class play:
                     time.sleep(1)
                     cont = 1
                     os.system("ahorcado.py")
-        opc = input("Desea Iniciar Nuevo Juego s/n: ")
+
 
         if opc.lower() == "n":
             os.system("ahorcado.py")
@@ -162,7 +162,7 @@ class play:
     # def Salir(self):
     #     sys.exit()
     def Resetear(self):
-        return 0
+        obj_palabras.Resetear()
 
     def Hibernar(self):
         os.system("shutdown /h")
