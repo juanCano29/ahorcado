@@ -1,7 +1,6 @@
 import re, os, time
 import Palabras
 obj_palabras = Palabras.palabra()
-
 class play:
 
     def Agregar_palabra(self):
@@ -138,7 +137,6 @@ class play:
                     time.sleep(1)
                     print("Cargando...")
                     time.sleep(1)
-                    cont = 1
                     os.system("ahorcado.py")
 
                 elif pl == lista_mostrar:
@@ -152,7 +150,6 @@ class play:
                     print("Cargando...")
                     os.system("cls")
                     time.sleep(1)
-                    cont = 1
                     os.system("ahorcado.py")
 
 

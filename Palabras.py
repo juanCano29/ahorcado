@@ -32,4 +32,5 @@ class palabra:
         arc.close()
         print("Palabras Restauradas")
         time.sleep(1)
+        os.system("cls")
         os.system("ahorcado.py")

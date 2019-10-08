@@ -5,8 +5,8 @@ obj_menu = Menu.men()
 op = int(input(""" 
 1) Agregar Palabra 
 2) Iniciar Juego
-3) Salir
-4) Rsetear
+3) Resetear
+4) Salir
 5) Hibernar
 Opcion: """))
 os.system("cls")
