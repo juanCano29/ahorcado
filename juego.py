@@ -120,7 +120,7 @@ class play:
                 if letra not in pl:
                     intentos = intentos - 1
                     print('Has fallado!!!! Te quedan ' + str(intentos) + ' intentos')
-
+                    input()
                 print(ahorcado[intentos])
 
 
@@ -151,6 +151,7 @@ class play:
                     os.system("cls")
                     time.sleep(1)
                     os.system("ahorcado.py")
+
 
 
         if opc.lower() == "n":

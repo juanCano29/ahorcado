@@ -1,6 +1,10 @@
-palo
-boton
-casa
-tecla
 pino
 computadora
+casa
+oso
+jaula
+tecla
+palo
+herramienta
+helicoptero
+botonpasto
