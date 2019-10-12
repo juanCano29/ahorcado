@@ -1,5 +1,5 @@
-import Menu, DataBase, os, time
-db = DataBase
+import Menu, Coneccion, os, time
+db = Coneccion
 db.mydb.cursor()
 name = input(str("Ingrese su nickname: "))
 sql = "INSERT INTO jugadores ( nickname ) VALUES ('"+(name)+"')"
