@@ -1,5 +1,6 @@
 from random import shuffle
 import os, time
+import DataBase
 class palabra:
     archivo_origen = []
     archivo_destino = []
@@ -7,30 +8,36 @@ class palabra:
     ad = ""
 
     def __init__(self):
-        self.archivo_origen = [line.rstrip() for line in open("Palabras.txt")]
-        self.archivo_destino = [line.rstrip() for line in open("Guardado.txt")]
-        self.ao = "Palabras.txt"
-        self.ad = "Guardado.txt"
+       try:
+           db = DataBase.database()
+           palabrasdb = db.getPalabras()
+           self.archivo_origenbd = palabrasdb
+       except Exception:
+            self.archivo_origen = [line.rstrip() for line in open("Palabras.txt")]
+            self.archivo_destino = [line.rstrip() for line in open("Guardado.txt")]
+            self.ao = "Palabras.txt"
+            self.ad = "Guardado.txt"
+
 
     def llenado_palabras(self):
-        if len(self.archivo_origen) == 0:
-             self.archivo_origen = self.archivo_destino
-        shuffle(self.archivo_origen)
+            if len(self.archivo_origen) == 0:
+                 self.archivo_origen = self.archivo_destino
+            shuffle(self.archivo_origen)
 
     def sobrescribir(self):
-        ar = open(self.ao, "w")
-        cadena = "\n".join(str(x) for x in self.archivo_origen)
-        ar.write(cadena)
-        ar.close()
+            ar = open(self.ao, "w")
+            cadena = "\n".join(str(x) for x in self.archivo_origen)
+            ar.write(cadena)
+            ar.close()
 
     def Resetear(self):
-        self.archivo_origen = self.archivo_destino
-        shuffle(self.archivo_origen)
-        arc = open(self.ao, "w")
-        cad = "\n".join(str(i) for i in self.archivo_destino)
-        arc.write(cad)
-        arc.close()
-        print("Palabras Restauradas")
-        time.sleep(1)
-        os.system("cls")
-        os.system("ahorcado.py")
+            self.archivo_origen = self.archivo_destino
+            shuffle(self.archivo_origen)
+            arc = open(self.ao, "w")
+            cad = "\n".join(str(i) for i in self.archivo_destino)
+            arc.write(cad)
+            arc.close()
+            print("Palabras Restauradas")
+            time.sleep(1)
+            os.system("cls")
+            os.system("ahorcado.py")

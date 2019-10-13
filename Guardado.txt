@@ -3,8 +3,8 @@ pino
 casa
 computadora
 tecla
-botonpasto
+boton
+pasto
 herramienta
 helicoptero
-jaula
-oso
+queso
