@@ -1,22 +1,16 @@
 import mysql.connector
+class coneccion:
 
-mydb = mysql.connector.connect(
-    host="127.0.0.1",
-    user="root",
-    passwd="",
-    database="ahorcadodb"
-)
-print(mydb)
-mycursor = mydb.cursor()
+  mydb = mysql.connector.connect(
+        host="127.0.0.1",
+        user="root",
+        passwd="",
+        database="ahorcadodb"
+    )
 
-# class Database:
-#
-#     def __init__(self):
-#         pass
-#
-#     def InsertarNombre(self,name):
-#         sql = "insert into jugadores (nickname) values (%name);"
-#         nom = name
-#         mycursor.execute(sql, nom)
-#         mydb.commit()
+  def Abrir(self):
+       return self.mydb
 
+  def Cursor(self):
+      cursor = self.mydb.cursor()
+      return cursor

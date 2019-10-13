@@ -1,13 +1,8 @@
-import Menu, Coneccion, os, time
-db = Coneccion
-db.mydb.cursor()
+import Menu, DataBase, os, time
+db = DataBase.database()
 name = input(str("Ingrese su nickname: "))
-sql = "INSERT INTO jugadores ( nickname ) VALUES ('"+(name)+"')"
-a = db.mycursor.execute(sql)
-db.mydb.commit()
-db.mydb.close()
+db.setInsertar_nombre(name)
 time.sleep(1)
-from time import sleep
 obj_menu = Menu.men()
 op = int(input(""" 
 1) Agregar Palabra 
